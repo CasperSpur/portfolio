@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A hacker-style portfolio for a curious builder exploring cybersecurity, AI, and vibe coding.">
+  <title>root@alex:~$ whoami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Alex home">
+      <span class="brand-mark">&gt;_</span>
+      <span>alex<span class="accent">.dev</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span>menu</span>
+      <span class="menu-icon" aria-hidden="true">[=]</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="#about">./about</a>
+      <a href="#interests">./interests</a>
+      <a href="#contact">./connect</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="prompt">$</span> initializing curiosity...</p>
+        <h1>Building in the<br><span class="accent">in-between.</span></h1>
+        <p class="hero-intro">I’m Alex — a digital tinkerer turning sharp questions into useful things. Exploring the edges of cybersecurity, artificial intelligence, and creative code.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#about">run about.sh <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#contact">ping me <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="terminal-card reveal" aria-label="Terminal status">
+        <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-label">guest@alex-lab: ~</span></div>
+        <div class="terminal-body">
+          <p><span class="terminal-prompt">guest@alex-lab:~$</span> whoami</p>
+          <p class="terminal-output">curious_builder</p>
+          <p><span class="terminal-prompt">guest@alex-lab:~$</span> cat mission.txt</p>
+          <p class="terminal-output muted">make complex things feel possible.</p>
+          <p><span class="terminal-prompt">guest@alex-lab:~$</span> <span id="typing-line"></span><span class="cursor" aria-hidden="true">▋</span></p>
+        </div>
+        <div class="terminal-stamp">STATUS: <span>ONLINE</span></div>
+      </div>
+      <div class="hero-meta reveal">
+        <span>lat 40.7128° N</span>
+        <span>long 74.0060° W</span>
+        <span>available for good problems</span>
+      </div>
+    </section>
+
+    <section id="about" class="section shell about-section">
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+        <div><p class="eyebrow">/etc/profile</p><h2>Not your average<br><span class="accent">about me.</span></h2></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=85" alt="Close-up of a server rack with blue lights"></div>
+        <div class="about-copy reveal">
+          <p class="lead">I like the moment when a black box opens up and the logic inside starts to make sense.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a mauris in arcu vulputate luctus. Praesent vel erat non ipsum posuere tincidunt. I’m happiest somewhere between a terminal window, a half-formed idea, and a very strong cup of coffee.</p>
+          <p>Curiosity is my operating system. I learn by pulling things apart, asking better questions, and building tiny experiments until the signal appears.</p>
+          <div class="about-signature"><span class="accent">$</span> cat /home/alex/values.txt <span class="signature-line"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section interests-section">
+      <div class="shell">
+        <div class="section-heading reveal"><span class="section-number">02</span><div><p class="eyebrow">processes running</p><h2>Current<br><span class="accent">obsessions.</span></h2></div></div>
+        <div class="interest-grid">
+          <article class="interest-card reveal"><span class="card-index">01 / 03</span><span class="card-icon">◈</span><h3>Cybersecurity</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Finding the gap before someone else does.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+          <article class="interest-card reveal"><span class="card-index">02 / 03</span><span class="card-icon">◎</span><h3>Artificial<br>intelligence</h3><p>Making machines more useful, more thoughtful, and a little less mysterious. Lorem ipsum dolor sit amet.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+          <article class="interest-card reveal"><span class="card-index">03 / 03</span><span class="card-icon">⌁</span><h3>Vibe coding</h3><p>Fast loops, messy sketches, and following the good idea when it suddenly shows up. Lorem ipsum.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section shell">
+      <div class="contact-panel reveal">
+        <div><p class="eyebrow"><span class="prompt">$</span> open_connection --secure</p><h2>Let’s make<br><span class="accent">something interesting.</span></h2></div>
+        <div class="contact-side"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Got a strange problem, a sharp idea, or a rabbit hole worth exploring?</p><button class="button button-primary copy-email" type="button" data-email="hello@alex.dev">copy email <span aria-hidden="true">⧉</span></button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><span>© <span id="year"></span> alex.dev</span><span>built with curiosity + caffeine</span><a href="#top">back to top ↑</a></footer>
+</body>
+</html>
