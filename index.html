@@ -3,8 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A hacker-style portfolio for a curious builder exploring cybersecurity, AI, and vibe coding.">
+  <meta name="description" content="A hacker-style portfolio for Casper, a web communication researcher exploring AI governance, responsible AI, and cybersecurity.">
   <title>root@casper:~$ whoami</title>
+  <meta property="og:title" content="root@casper:~$ whoami">
+  <meta property="og:description" content="A hacker-style portfolio for Casper, a web communication researcher exploring AI governance, responsible AI, and cybersecurity.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Casper Spur",
+    "jobTitle": "Web Communication Master's Student",
+    "email": "casper@casperspur.com",
+    "knowsAbout": ["AI governance", "AI ethics", "Cybersecurity", "Web communication"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +26,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#top">skip to content</a>
   <div class="scanlines" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Casper home">
@@ -32,9 +47,9 @@
   <main id="top">
     <section class="hero shell">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="prompt">$</span> initializing curiosity...</p>
+        <p class="eyebrow"><span class="prompt">$</span> ./explore --topic ai_governance</p>
         <h1>Building in the<br><span class="accent">in-between.</span></h1>
-        <p class="hero-intro">I’m Casper — a digital tinkerer turning sharp questions into useful things. Exploring the edges of cybersecurity, artificial intelligence, and creative code.</p>
+        <p class="hero-intro">I’m Casper — a web communication master’s student turning sharp questions into useful things. Exploring the edges of AI governance, responsible AI, and cybersecurity.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#about">run about.sh <span aria-hidden="true">↘</span></a>
           <a class="text-link" href="#contact">ping me <span aria-hidden="true">→</span></a>
@@ -44,7 +59,7 @@
         <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-label">guest@casper-lab: ~</span></div>
         <div class="terminal-body">
           <p><span class="terminal-prompt">guest@casper-lab:~$</span> whoami</p>
-          <p class="terminal-output">curious_builder</p>
+          <p class="terminal-output">web_communication_student</p>
           <p><span class="terminal-prompt">guest@casper-lab:~$</span> cat mission.txt</p>
           <p class="terminal-output muted">make complex things feel possible.</p>
           <p><span class="terminal-prompt">guest@casper-lab:~$</span> <span id="typing-line"></span><span class="cursor" aria-hidden="true">▋</span></p>
@@ -52,8 +67,8 @@
         <div class="terminal-stamp">STATUS: <span>ONLINE</span></div>
       </div>
       <div class="hero-meta reveal">
-        <span>lat 40.7128° N</span>
-        <span>long 74.0060° W</span>
+        <span>lat 55.6761° N</span>
+        <span>long 12.5683° E</span>
         <span>available for good problems</span>
       </div>
     </section>
@@ -67,8 +82,8 @@
         <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=85" alt="Close-up of a server rack with blue lights"></div>
         <div class="about-copy reveal">
           <p class="lead">I like the moment when a black box opens up and the logic inside starts to make sense.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a mauris in arcu vulputate luctus. Praesent vel erat non ipsum posuere tincidunt. I’m happiest somewhere between a terminal window, a half-formed idea, and a very strong cup of coffee.</p>
-          <p>Curiosity is my operating system. I learn by pulling things apart, asking better questions, and building tiny experiments until the signal appears.</p>
+          <p>My master’s in web communication sits beside an interdisciplinary background in IT support, digital communication, entrepreneurship and process improvement — coordinating across functions, finding where the process breaks, and fixing it.</p>
+          <p>Curiosity is my operating system. I learn by pulling things apart, asking better questions, and building tiny experiments until the signal appears — now pointed at AI governance, responsible AI and cybersecurity, and at how that knowledge gets communicated in hospitals, companies and boardrooms.</p>
           <div class="about-signature"><span class="accent">$</span> cat /home/casper/values.txt <span class="signature-line"></span></div>
         </div>
       </div>
@@ -78,17 +93,31 @@
       <div class="shell">
         <div class="section-heading reveal"><span class="section-number">02</span><div><p class="eyebrow">processes running</p><h2>Current<br><span class="accent">obsessions.</span></h2></div></div>
         <div class="interest-grid">
-          <article class="interest-card reveal"><span class="card-index">01 / 03</span><span class="card-icon">◈</span><h3>Cybersecurity</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Finding the gap before someone else does.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
-          <article class="interest-card reveal"><span class="card-index">02 / 03</span><span class="card-icon">◎</span><h3>Artificial<br>intelligence</h3><p>Making machines more useful, more thoughtful, and a little less mysterious. Lorem ipsum dolor sit amet.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
-          <article class="interest-card reveal"><span class="card-index">03 / 03</span><span class="card-icon">⌁</span><h3>Vibe coding</h3><p>Fast loops, messy sketches, and following the good idea when it suddenly shows up. Lorem ipsum.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+          <article class="interest-card reveal"><span class="card-index">01 / 03</span><span class="card-icon">◈</span><h3>Cybersecurity</h3><p>Finding the gap before someone else does. The human layer behind the technical one.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+          <article class="interest-card reveal"><span class="card-index">02 / 03</span><span class="card-icon">◎</span><h3>Artificial<br>intelligence</h3><p>Governance before deployment — asking what makes machines trustworthy, ethical and accountable before they ship.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
+          <article class="interest-card reveal"><span class="card-index">03 / 03</span><span class="card-icon">⌁</span><h3>Vibe coding</h3><p>Fast loops, messy sketches, and following the good idea when it suddenly shows up. Building things that feel possible.</p><a class="card-link" href="#contact">inspect interest <span>↗</span></a></article>
         </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section shell">
+      <div class="section-heading reveal">
+        <span class="section-number">03</span>
+        <div><p class="eyebrow">/history --verbose</p><h2>Selected<br><span class="accent">work.</span></h2></div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><span class="timeline-period">2022 — 2023</span><div><h3>Lokal-gruppen</h3><p class="timeline-role">Digital Content &amp; Marketing Intern</p><p>Supported the rollout of approximately 100 local news websites in Denmark; wrote web content and contributed to marketing, Google Analytics and longer-term business strategy.</p></div></article>
+        <article class="timeline-item reveal"><span class="timeline-period">2021 — 2022</span><div><h3>Focus People</h3><p class="timeline-role">Respiratory Care Assistant</p><p>Provided round-the-clock respiratory support for a person with ALS, gaining direct exposure to the sensitivity and reliability demands of patient-facing care.</p></div></article>
+        <article class="timeline-item reveal"><span class="timeline-period">2019 — 2021</span><div><h3>YouSee</h3><p class="timeline-role">Customer Adviser / Process Consultant</p><p>Helped customers solve service issues and understand their accounts; led the Quality Time process improvement, engaging internal teams and chairing internal meetings.</p></div></article>
+        <article class="timeline-item reveal"><span class="timeline-period">2017 — 2019</span><div><h3>Stakem.io</h3><p class="timeline-role">Co-founder</p><p>Responsible for technology, server operations and maintenance; contributed to platform feature development and monitored blockchain projects.</p></div></article>
+        <article class="timeline-item reveal"><span class="timeline-period">2014 — 2020</span><div><h3>Spur CON:TRA</h3><p class="timeline-role">Founder / Self-employed</p><p>Concept development and sales of personalized laser-engraved gifts and sports cards.</p></div></article>
       </div>
     </section>
 
     <section id="contact" class="section contact-section shell">
       <div class="contact-panel reveal">
         <div><p class="eyebrow"><span class="prompt">$</span> open_connection --secure</p><h2>Let’s make<br><span class="accent">something interesting.</span></h2></div>
-        <div class="contact-side"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Got a strange problem, a sharp idea, or a rabbit hole worth exploring?</p><button class="button button-primary copy-email" type="button" data-email="casper@casperspur.com">copy email <span aria-hidden="true">⧉</span></button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+        <div class="contact-side"><p>Have a strange problem, a sharp idea, or a rabbit hole worth exploring? Hospital-based thesis collaborations and AI governance work are very much welcome.</p><p class="contact-phone"><a href="tel:+4525365295">+45 25 36 52 95</a></p><button class="button button-primary copy-email" type="button" data-email="casper@casperspur.com">copy email <span aria-hidden="true">⧉</span></button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
       </div>
     </section>
   </main>

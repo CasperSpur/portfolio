@@ -14,7 +14,7 @@ siteNav.querySelectorAll('a').forEach((link) => {
 });
 
 const typingLine = document.querySelector('#typing-line');
-const command = './build-something-weird';
+const command = './thesis --topic ai_governance';
 let characterIndex = 0;
 
 function typeCommand() {
