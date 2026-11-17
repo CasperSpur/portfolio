@@ -1,0 +1,66 @@
+{
+  "_note": "Edit the `experience` and `education` arrays below. Replace the placeholder education entries before publishing. Each entry supports: period, company/institution, role/degree, location (optional), description, and highlights (optional array of strings).",
+  "experience": [
+    {
+      "period": "2022 — 2023",
+      "company": "Lokal-gruppen",
+      "role": "Digital Content & Marketing Intern",
+      "location": "Denmark",
+      "description": "Supported the rollout of approximately 100 local news websites in Denmark; wrote web content and contributed to marketing, Google Analytics and longer-term business strategy.",
+      "highlights": []
+    },
+    {
+      "period": "2021 — 2022",
+      "company": "Focus People",
+      "role": "Respiratory Care Assistant",
+      "location": "Denmark",
+      "description": "Provided round-the-clock respiratory support for a person with ALS, gaining direct exposure to the sensitivity and reliability demands of patient-facing care.",
+      "highlights": []
+    },
+    {
+      "period": "2019 — 2021",
+      "company": "YouSee",
+      "role": "Customer Adviser / Process Consultant",
+      "location": "Denmark",
+      "description": "Helped customers solve service issues and understand their accounts; led the Quality Time process improvement, engaging internal teams and chairing internal meetings.",
+      "highlights": []
+    },
+    {
+      "period": "2017 — 2019",
+      "company": "Stakem.io",
+      "role": "Co-founder",
+      "location": "",
+      "description": "Responsible for technology, server operations and maintenance; contributed to platform feature development and monitored blockchain projects.",
+      "highlights": []
+    },
+    {
+      "period": "2014 — 2020",
+      "company": "Spur CON:TRA",
+      "role": "Founder / Self-employed",
+      "location": "",
+      "description": "Concept development and sales of personalized laser-engraved gifts and sports cards.",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "period": "2023 — 2025",
+      "institution": "Example University",
+      "degree": "MSc, Web Communication",
+      "location": "Copenhagen, Denmark",
+      "description": "PLACEHOLDER — replace with a short summary of your master's programme, thesis focus or relevant coursework.",
+      "highlights": [
+        "PLACEHOLDER — add a relevant project or achievement",
+        "PLACEHOLDER — add another highlight"
+      ]
+    },
+    {
+      "period": "2016 — 2019",
+      "institution": "Example College",
+      "degree": "BSc, Digital Communication",
+      "location": "Copenhagen, Denmark",
+      "description": "PLACEHOLDER — replace with a short summary of your bachelor's programme.",
+      "highlights": []
+    }
+  ]
+}

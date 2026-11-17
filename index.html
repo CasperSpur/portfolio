@@ -40,6 +40,8 @@
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <a href="#about">./about</a>
       <a href="#interests">./interests</a>
+      <a href="#journey">./experience</a>
+      <a href="#education">./education</a>
       <a href="#contact">./connect</a>
     </nav>
   </header>
@@ -79,7 +81,7 @@
         <div><p class="eyebrow">/etc/profile</p><h2>Not your average<br><span class="accent">about me.</span></h2></div>
       </div>
       <div class="about-grid">
-        <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=85" alt="Close-up of a server rack with blue lights"></div>
+        <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=85" alt="Close-up of a server rack with blue lights" loading="lazy" decoding="async"></div>
         <div class="about-copy reveal">
           <p class="lead">I like the moment when a black box opens up and the logic inside starts to make sense.</p>
           <p>My master’s in web communication sits beside an interdisciplinary background in IT support, digital communication, entrepreneurship and process improvement — coordinating across functions, finding where the process breaks, and fixing it.</p>
@@ -105,12 +107,20 @@
         <span class="section-number">03</span>
         <div><p class="eyebrow">/history --verbose</p><h2>Selected<br><span class="accent">work.</span></h2></div>
       </div>
-      <div class="timeline">
-        <article class="timeline-item reveal"><span class="timeline-period">2022 — 2023</span><div><h3>Lokal-gruppen</h3><p class="timeline-role">Digital Content &amp; Marketing Intern</p><p>Supported the rollout of approximately 100 local news websites in Denmark; wrote web content and contributed to marketing, Google Analytics and longer-term business strategy.</p></div></article>
-        <article class="timeline-item reveal"><span class="timeline-period">2021 — 2022</span><div><h3>Focus People</h3><p class="timeline-role">Respiratory Care Assistant</p><p>Provided round-the-clock respiratory support for a person with ALS, gaining direct exposure to the sensitivity and reliability demands of patient-facing care.</p></div></article>
-        <article class="timeline-item reveal"><span class="timeline-period">2019 — 2021</span><div><h3>YouSee</h3><p class="timeline-role">Customer Adviser / Process Consultant</p><p>Helped customers solve service issues and understand their accounts; led the Quality Time process improvement, engaging internal teams and chairing internal meetings.</p></div></article>
-        <article class="timeline-item reveal"><span class="timeline-period">2017 — 2019</span><div><h3>Stakem.io</h3><p class="timeline-role">Co-founder</p><p>Responsible for technology, server operations and maintenance; contributed to platform feature development and monitored blockchain projects.</p></div></article>
-        <article class="timeline-item reveal"><span class="timeline-period">2014 — 2020</span><div><h3>Spur CON:TRA</h3><p class="timeline-role">Founder / Self-employed</p><p>Concept development and sales of personalized laser-engraved gifts and sports cards.</p></div></article>
+      <div class="timeline" id="experience-list" aria-busy="true">
+        <!-- Populated from cv.json by script.js -->
+      </div>
+    </section>
+
+    <section id="education" class="section education-section">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <span class="section-number">04</span>
+          <div><p class="eyebrow">/history --academic</p><h2>How I<br><span class="accent">learned.</span></h2></div>
+        </div>
+        <div class="timeline" id="education-list" aria-busy="true">
+          <!-- Populated from cv.json by script.js -->
+        </div>
       </div>
     </section>
 
