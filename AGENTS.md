@@ -1,112 +1,75 @@
-\# AGENTS.md
-
-
-
-Instructions for AI coding agents working in this repository.
-
-
-
-\## Project overview
-
-
-
-\- Static, single-page personal portfolio for Casper (casper.dev) with a
-
-&#x20; terminal / "hacker" aesthetic (dark theme, acid-green accents, scanlines).
-
-\- Pure vanilla HTML, CSS, and JavaScript. No build step, no package manager,
-
-&#x20; no framework, no dependencies to install.
-
-\- Files:
-
-&#x20; - `index.html` — all page content and structure (hero, about, interests,
-
-&#x20;   timeline, contact, footer).
-
-&#x20; - `style.css` — all styling, organized into numbered sections listed in the
-
-&#x20;   comment block at the top of the file.
-
-&#x20; - `script.js` — small interaction layer: mobile menu, terminal typing,
-
-&#x20;   scroll reveal, footer year, copy-email button.
-
-\- External assets loaded via CDN: Google Fonts (DM Mono, Space Grotesk) and
-
-&#x20; one Unsplash image. Keep these as remote URLs; there is no local asset
-
-&#x20; pipeline.
-
-\- To preview locally, just open `index.html` in a browser (or serve the
-
-&#x20; folder with any static file server).
-
-
-
-\## Code style \& conventions
-
-
-
-\### HTML
-
-\- Use 2-space indentation and semantic elements (`header`, `main`, `section`,
-
-&#x20; `article`, `footer`).
-
-\- Keep the `id` anchors that navigation links target (`#top`, `#about`,
-
-&#x20; `#interests`, `#journey`, `#contact`).
-
-\- Preserve accessibility attributes: `aria-label`, `aria-expanded`,
-
-&#x20; `aria-controls`, `role="status"`, the skip link, and `alt` text on images.
-
-\- `script.js` is loaded with `defer` in `<head>` — keep it that way.
-
-
-
-\### CSS
-
-\- Follow the numbered section layout in `style.css` and update the contents
-
-&#x20; comment block when adding/reordering sections.
-
-\- Define and reuse design tokens in `:root`; avoid hard-coded colors — use
-
-&#x20; `var(--ink)`, `var(--acid)`, `var(--orange)`, `var(--night)`, etc.
-
-\- Use lowercase hyphenated class names (BEM-like, e.g. `terminal-card`,
-
-&#x20; `button-primary`, `is-open`).
-
-\- Layout is written mobile-first: base styles, then `@media (min-width: 700px)`
-
-&#x20; and `(min-width: 1000px)`, plus a single `(max-width: 699px)` override.
-
-\- Preserve `prefers-reduced-motion` handling and the `.reveal` / `.visible`
-
-&#x20; animation contract used by `script.js`.
-
-
-
-\### JavaScript
-
-\- Keep the `init\*` function-per-concern pattern and the constants block at the
-
-&#x20; top for tunable values (typing speed, thresholds, typed command).
-
-\- Use the `byId` helper and guard clauses (`if (!element) return;`) so each
-
-&#x20; init is safe when its markup is absent.
-
-\- Keep everything framework-free in a single file; no modules or bundler.
-
-
-
-\### Content
-
-\- Treat personal details (name, email, phone, job history, links) as
-
-&#x20; authoritative — don't invent or change them without asking.
-
+# AGENTS.md
+
+Instructions for AI coding agents working in this repository. Read this before editing.
+
+## Project overview
+
+- Static, single-page portfolio for Casper Spur (`casper.dev`) with a dark
+  terminal / "hacker" aesthetic (grid, scanlines, acid-green accents).
+- Pure vanilla HTML, CSS and JavaScript. No build step, no package manager,
+  no framework, no dependencies.
+- Core files:
+  - `index.html` — all page content and structure.
+  - `style.css` — all styling, in the numbered sections listed in the comment
+    block at the top of the file.
+  - `script.js` — interaction layer: menu, typing, reveal, year, copy-email, CV.
+  - `cv.json` — single source of truth for the Journey and Education timelines.
+- Reference docs (context, not rules): `handoff.md` (repo snapshot, may go stale),
+  `newideas.md` (Danish ideas list), `rebuild-prompt.md` (detailed 1:1 spec in
+  Danish). This file is authoritative when they disagree.
+- External assets are CDN-only: Google Fonts (DM Mono, Space Grotesk) and one
+  Unsplash image. Keep them as remote URLs; there is no local asset pipeline.
+- Preview: serve the folder over HTTP (e.g. `python -m http.server 8000`).
+  Opening `index.html` directly shows layout, but `fetch('cv.json')` is blocked
+  on `file://`, so both timelines will show an error message.
+
+## Rules of engagement
+
+- Preserve existing uncommitted work; never revert or overwrite changes you
+  did not make.
+- Do not commit, stage or push unless explicitly asked.
+- Personal details (name, email, phone, job history, links) are authoritative —
+  ask before changing them. The education entries in `cv.json` still contain
+  placeholders; flag them rather than inventing details.
+
+## HTML
+
+- Use 2-space indentation and semantic elements (`header`, `main`, `section`,
+  `article`, `footer`).
+- Keep the navigation anchors: `#top`, `#about`, `#interests`, `#journey`,
+  `#education`, `#contact`.
+- Preserve accessibility attributes: skip link, `aria-label`, `aria-expanded`,
+  `aria-controls`, `aria-live="polite"`, `role="status"`, `aria-busy` on the
+  timelines, `aria-hidden` on decorative elements, and image `alt` text.
+- `script.js` is loaded with `defer` in `<head>` — keep it that way.
+
+## CSS
+
+- Follow the numbered section layout in `style.css`; update the contents comment
+  when adding or reordering sections.
+- Reuse design tokens in `:root`. Use `var(--ink)`, `var(--acid)`, etc. for solid
+  colors and the paired `*-rgb` tokens for alpha, e.g.
+  `rgba(var(--acid-rgb), 0.08)`. No hard-coded colors.
+- Use lowercase hyphenated class names (`terminal-card`, `button-primary`,
+  `is-open`).
+- Mobile-first: base styles, then `@media (min-width: 700px)`,
+  `(min-width: 1000px)`, one `(max-width: 699px)` override, then
+  `prefers-reduced-motion`.
+- Preserve the `.reveal` / `.visible` animation contract used by `script.js`.
+
+## JavaScript
+
+- Keep the constants block at the top (`TYPING_SPEED_MS`, `TYPING_START_DELAY_MS`,
+  `REVEAL_THRESHOLD`, `TYPED_COMMAND`, `CV_DATA_URL`, `CV_SECTIONS`).
+- One `init*` function per concern; call them at the bottom of the file.
+- Use `byId` / `createNode` helpers and guard clauses (`if (!element) return;`)
+  so each init is safe when its markup is absent.
+- `initCv()` reads `cv.json`; section-to-data mapping lives in `CV_SECTIONS`.
+  Dynamically rendered items must be registered with `observeReveal()`.
+- Keep everything framework-free in a single file; no modules or bundler.
+
+## Verification
+
+- `node --check script.js`
+- Serve over HTTP and confirm both timelines render and `aria-busy` ends as `false`.
+- Check the reduced-motion path (typing shows immediately, no reveal transitions).
