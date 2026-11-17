@@ -709,6 +709,21 @@ h2 {
     display: flex;
   }
 
+  /* Undo the mobile dropdown if it was left open when crossing the breakpoint. */
+  .site-nav.is-open {
+    position: static;
+    flex-direction: row;
+    gap: 28px;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+
+  .site-nav.is-open a {
+    padding: 0;
+    border-bottom: 0;
+  }
+
   .hero {
     padding-top: 120px;
     min-height: 800px;

@@ -15,7 +15,8 @@ const CV_SECTIONS = [
   { containerId: 'education-list', key: 'education', organizationKey: 'institution', titleKey: 'degree' }
 ];
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = typeof window.matchMedia === 'function'
+  && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const byId = (id) => document.getElementById(id);
 
@@ -45,6 +46,12 @@ function initMenu() {
   siteNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setMenuState(false));
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 700 && siteNav.classList.contains('is-open')) {
+      setMenuState(false);
+    }
+  });
 }
 
 /* 2. Terminal typing — types the command once, respecting reduced motion. */
@@ -53,7 +60,12 @@ function initTyping() {
 
   if (!typingLine) return;
 
-  if (prefersReducedMotion) {
+  // Re-check at start-up so a preference changed after load is respected.
+  const reduceMotion = typeof window.matchMedia === 'function'
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : prefersReducedMotion;
+
+  if (reduceMotion) {
     typingLine.textContent = TYPED_COMMAND;
     return;
   }
@@ -75,13 +87,22 @@ function initTyping() {
 let revealObserver = null;
 
 function observeReveal(element) {
-  if (revealObserver) revealObserver.observe(element);
+  if (revealObserver) {
+    revealObserver.observe(element);
+  } else {
+    element.classList.add('visible');
+  }
 }
 
 function initReveal() {
   const revealables = document.querySelectorAll('.reveal');
 
   if (!revealables.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    revealables.forEach((element) => element.classList.add('visible'));
+    return;
+  }
 
   revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -155,15 +176,17 @@ function renderCvEntry(entry, config) {
 function renderCvSection(container, entries, config) {
   container.replaceChildren();
 
-  if (!Array.isArray(entries) || !entries.length) {
+  const validEntries = Array.isArray(entries)
+    ? entries.filter((entry) => entry && typeof entry === 'object')
+    : [];
+
+  if (!validEntries.length) {
     container.appendChild(createNode('p', 'cv-message', 'No entries yet — add some to cv.json.'));
     return;
   }
 
-  entries.forEach((entry) => {
-    if (entry && typeof entry === 'object') {
-      container.appendChild(renderCvEntry(entry, config));
-    }
+  validEntries.forEach((entry) => {
+    container.appendChild(renderCvEntry(entry, config));
   });
 }
 
